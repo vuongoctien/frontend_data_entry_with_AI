@@ -1,21 +1,73 @@
-.main {
-    .col {
-        border: 1px solid green;
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -10vw;
+    /* Ẩn menu ra ngoài */
+    width: 20vw;
+    height: 100vh;
+    background-color: #fcfcfc;
+    transition: left 0.3s ease;
+    overflow: auto;
+    z-index: 1000;
+    /* Giúp menu nằm trên tất cả */
+
+    form {
+        padding: 1vw;
+
+        button {
+            width: 100%;
+            margin-top: 1vh;
+        }
+    }
+
+    .error-msg {
+        width: 100%;
+        color: red;
+        font-size: 14px;
+        font-weight: 600;
     }
 }
 
-.pdf-container {
-    width           : 100%;
-    height          : 800px;
-    background-color: #e4e4e4;
-    overflow-y      : auto;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
+.side-menu:hover {
+    left: 0;
+    /* Trượt vào khi hover */
 }
 
+.main {
+    display: flex;
 
-.list ul li {
-    border : 1px solid red;
-    padding: 2px;
+    .preview {
+        margin-left: 20vw;
+        width: 50vw;
+        text-align: center;
+
+        .prev-next {
+            a {
+                text-decoration: none;
+                display: inline-block;
+                padding: 2px 8px;
+                border-radius: 3px;
+                margin: 5px;
+                border: 1px solid black;
+                background-color: white;
+                color: black;
+                cursor: pointer;
+            }
+
+            a:hover {
+                background-color: #fbff00;
+                color: black;
+            }
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 800px;
+            background-color: #e4e4e4;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
